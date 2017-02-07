@@ -35,6 +35,21 @@ In our simple example the controller looks like this:
 
     class InventoryController extends ActionController {
 
+        /**
+	    * productRepository
+	    *
+	    * @var \MyVendor\Inventory\Domain\Repository\ProductRepository
+	    */
+	    protected $productRepository;
+
+	    /**
+	    * @param \MyVendor\Inventory\Domain\Repository\ProductRepository $productRepository
+	    */
+	    public function injectProductRepository(\MyVendor\Inventory\Domain\Repository\ProductRepository $productRepository)
+	    {
+		    $this->productRepository = $productRepository;
+	    }
+
         public function listAction() {
             $productRepository = GeneralUtility::makeInstance(ProductRepository::class);
             $products = $productRepository->findAll();
