@@ -31,7 +31,7 @@ In our simple example the controller looks like this:
     namespace \MyVendor\Inventory\Controller;
     use \TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
     use \TYPO3\CMS\Core\Utility\GeneralUtility;
-    use \MyVendor\Inventory\Domain\Model\Repository\ProductRepository;
+    use \MyVendor\Inventory\Domain\Repository\ProductRepository;
 
     class InventoryController extends ActionController {
 
